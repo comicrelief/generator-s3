@@ -1,0 +1,41 @@
+sudo: false
+language: node_js
+node_js:
+  - 4
+
+git:
+  depth: 1
+
+cache:
+  apt: true
+  bundler: true
+
+matrix:
+  fast_finish: true
+
+# before_script:
+#   - export BUILD_DIR=$TRAVIS_BUILD_DIR
+
+script:
+  # Run tests against the built application
+  - return 0
+
+deploy:
+  - provider: s3
+    access_key_id: $ARTIFACTS_KEY
+    secret_access_key: $ARTIFACTS_SECRET
+    bucket: <%= artifacts_bucket_development %>
+    region: <%= region %>
+    skip_cleanup: true
+    local_dir: "$TRAVIS_BUILD_DIR/<%= build_directory %>"
+    on:
+      branch: <%= development_branch %>
+  - provider: s3
+    access_key_id: $ARTIFACTS_KEY
+    secret_access_key: $ARTIFACTS_SECRET
+    bucket: <%= artifacts_bucket_production %>
+    region: <%= region %>
+    skip_cleanup: true
+    local_dir: "$TRAVIS_BUILD_DIR/<%= build_directory %>"
+    on:
+      branch: <%= production_branch %>

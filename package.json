@@ -1,0 +1,35 @@
+{
+  "name": "generator-s3",
+  "version": "0.1.0",
+  "description": "Yeoman generator to deploy a static site to S3 from Travis",
+  "homepage": "https://github.com/comicrelief/generator-s3",
+  "author": {
+    "name": "Peter Vanhee",
+    "email": "peter.vanhee@gmail.com",
+    "url": "http://github.com/pvhee"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "s3",
+    "github",
+    "travis",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "yeoman-generator": "^0.23.0",
+    "yosay": "^1.0.0"
+  },
+  "devDependencies": {
+    "yeoman-test": "^1.0.0",
+    "yeoman-assert": "^2.0.0"
+  },
+  "repository": "comicrelief/generator-s3",
+  "scripts": {
+    "test": "gulp"
+  },
+  "license": "MIT"
+}
