@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var mocha = require('gulp-mocha');
 var nsp = require('gulp-nsp');
 var plumber = require('gulp-plumber');
+var Promise = require('es6-promise').Promise;
 
 gulp.task('nsp', function (cb) {
   nsp({package: path.resolve('package.json')}, cb);
