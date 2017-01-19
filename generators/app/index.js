@@ -96,25 +96,10 @@ module.exports = yeoman.Base.extend({
     }
   },
 
-  // install: function () {
-  //   // this.log(yosay('Installing dependencies. This might take a while'));
-  //   // this.npmInstall();
-  // },
-
   end: function () {
     this.log(yosay("Almost done, but we need sort out Travis now!"));
-    // this.spawnCommand('travis', ['enable']);
-    // this.spawnCommand('travis', ['env list']);
-
-    // var opt = {
-    //   shell: true
-    // };
-    // defaultShell.spawn('travis login', opt);
-    // defaultShell.spawn('travis enable', opt);
-    // defaultShell.spawn('travis env list', opt);
-
     this.log(chalk.blue.bold('We suggest you run these commands in a different window so you can follow the help instructions here!'));
-
+    
     this.log("\n" + chalk.green.bold.underline('Travis CI:'));
     this.log(chalk.red.bold('travis enable') + ': enable travis integration.');
     this.log(chalk.red.bold('travis env set ARTIFACTS_KEY ' + this.props.artifacts_key));

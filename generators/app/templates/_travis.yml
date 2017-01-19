@@ -13,9 +13,6 @@ cache:
 matrix:
   fast_finish: true
 
-# before_script:
-#   - export BUILD_DIR=$TRAVIS_BUILD_DIR
-
 script:
   # Run tests against the built application
   - return 0
